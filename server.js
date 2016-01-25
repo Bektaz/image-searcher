@@ -7,7 +7,8 @@ var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
 
 var port = process.env.PORT || 8080;
-var Url = 'mongodb://justuser:justuser@ds039195.mongolab.com:39195/dbfornode';
+console.log(MONGOLAB_URI);
+var Url = MONGOLAB_URI;//'mongodb://justuser:justuser@ds039195.mongolab.com:39195/dbfornode';
 
 var word = '', time;
  
@@ -44,7 +45,6 @@ function inToDb(str, time, Url){
 var server = http.createServer(function(req, resp){
     var obj = url.parse(req.url, true);
     var objpath = obj.path.split('/');
-        console.log(objpath);
     if(objpath.length === 2){
         resp.writeHead(200,{'content-type':'text/html'});
         var html = fs.readFileSync(__dirname+'/index.htm');
