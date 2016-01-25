@@ -1,0 +1,43 @@
+<html>
+    <head><link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></head>
+    <body style='background-color: lightblue'>
+        <div class='cotainer-fluid'>
+            <div class='row'>
+                <div class='col-md-10 col-md-offset-1'>
+                    <h1>API Basejump: Image Search Abstraction Layer</h1>
+                </div>
+            </div>
+            <br>
+            <div class='row'>
+                <div class='col-md-10 col-md-offset-1'>
+                    <blockquote>
+                        <h2>Usage tips</h2><br>
+                        <p>-As a parameter string of URL passed. String entered after <mark>/api/imgsearch/"your search string"</mark> will be a search string.</p>
+                        <p>-If  "offset=2" parameter is added afer search string like this <mark>/api/imgsearch/"your search string"/offset=2</mark> then response object will be paginated.</p>
+                        <p>-If  "latest" parameter is added afer imgsearch like this <mark>/api/imgsearch/latest</mark> then most recent search results will be shown.</p>
+                        </blockquote>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-10 col-md-offset-1'>
+                    <h2>Example of how URL string should be passed as a parameter:</h2><br>
+                    <p><mark>https://imgsearcher.herokuapp.com/api/imgsearch/gold fish</mark></p>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-10 col-md-offset-1'>
+                    <h2>To paginate it:</h2><br>
+                    <p><mark>https://imgsearcher.herokuapp.com/api/imgsearch/gold fish/offset=2</mark></p>
+                </div>
+            </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-10 col-md-offset-1'>
+                    <h2>Getting latest search result:</h2><br>
+                    <p><mark>https://imgsearcher.herokuapp.com/api/imgsearch/latest</mark></p>
+                </div>
+            </div>
+            <br>
+        </div>
+    </body>
+</html>
