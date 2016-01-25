@@ -7,8 +7,8 @@ var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
 
 var port = process.env.PORT || 8080;
-console.log(MONGOLAB_URI);
-var Url = MONGOLAB_URI;//'mongodb://justuser:justuser@ds039195.mongolab.com:39195/dbfornode';
+//console.log(MONGOLAB_URI);
+var Url = process.env.MONGOLAB_URI;//'mongodb://justuser:justuser@ds039195.mongolab.com:39195/dbfornode';
 
 var word = '', time;
  
