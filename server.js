@@ -7,7 +7,7 @@ var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
 
 var port = process.env.PORT || 8080;
-var Url = process.env.MONGOLAB_URI;
+var Url = process.env.MongoDB;
 var word = '', time;
  
 function getURL(word){
