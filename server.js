@@ -8,9 +8,9 @@ var MongoClient = mongodb.MongoClient;
 
 var port = process.env.PORT || 8080;
 //console.log(MONGOLAB_URI);
-var Url = process.env.MongoDb;
+//var Url = process.env.MongoDb;
 //var Url = 'mongodb://justuser:justuser@ds039195.mongolab.com:39195/dbfornode';
-
+var ttt = process.env.aaaa;
 var word = '', time;
  
 function getURL(word){
@@ -49,7 +49,7 @@ var server = http.createServer(function(req, resp){
     if(objpath.length === 2){
         resp.writeHead(200,{'content-type':'text/plain'});
         //var html = fs.readFileSync(__dirname+'/index.htm');
-        resp.end(Url);        
+        resp.end(ttt);        
     }else if(objpath.length === 4 && objpath[3] === 'latest'){
         console.log('3 is running');       
         MongoClient.connect(Url, function (err, db) {
