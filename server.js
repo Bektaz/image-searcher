@@ -8,8 +8,8 @@ var MongoClient = mongodb.MongoClient;
 
 var port = process.env.PORT || 8080;
 //console.log(MONGOLAB_URI);
-var Url = process.env.MongoDb;
-//var Url = 'mongodb://justuser:justuser@ds039195.mongolab.com:39195/dbfornode';
+//var Url = process.env.MongoDb;
+var Url = 'mongodb://justuser:justuser@ds039195.mongolab.com:39195/dbfornode';
 
 var word = '', time;
  
