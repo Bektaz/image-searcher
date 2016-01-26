@@ -11,8 +11,8 @@ var Url = process.env.MONGOLAB_URI;
 var word = '', time;
  
 function getURL(word){
-    var key = 'AIzaSyAx353Q3uoUU2ZPhGUV9_YNl7TOrhFEQb4';
-    var cx = '012254012315510308687:4tnj8ftr3x8';
+    var key = process.env.key;
+    var cx = process.env.cx;
     var searchword = word;    
     var surl = 'https://www.googleapis.com/customsearch/v1?key=' + key + '&cx=' + cx + '&searchType=image&q=' + searchword;
     return surl;
@@ -47,8 +47,7 @@ var server = http.createServer(function(req, resp){
         resp.writeHead(200,{'content-type':'text/html'});
         var html = fs.readFileSync(__dirname+'/index.htm');
         resp.end(html);        
-    }else if(objpath.length === 4 && objpath[3] === 'latest'){
-        console.log('3 is running');       
+    }else if(objpath.length === 4 && objpath[3] === 'latest'){      
         MongoClient.connect(Url, function (err, db) {
         if (err) {
         console.log('Unable to connect to the mongoDB server. Error:', err);
@@ -70,7 +69,6 @@ var server = http.createServer(function(req, resp){
         } 
     });
     }else if(objpath.length === 4){
-        console.log('1 is running');
         time = new Date(Date.now());        
         word = obj.path.split('/')[3];
         request(getURL(word), function (error, response, body) {
@@ -82,7 +80,6 @@ var server = http.createServer(function(req, resp){
         });        
         inToDb(word, time, Url);
     }else if(objpath.length === 5 && objpath[4] === 'offset=2'){
-        console.log('2 is running');
         time = new Date(Date.now());        
         word = obj.path.split('/')[3];
         request(getURL(word), function (error, response, body) {
